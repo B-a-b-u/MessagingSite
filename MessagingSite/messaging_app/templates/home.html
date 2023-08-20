@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messagesite</title>
+</head>
+<body>
+<h1>Messaging site</h1>
+{% block content %}
+        <h1>Posts</h1>
+        <br><br>
+        {% if posts %}
+            {% for post in posts %}
+                <ul>
+
+                        <li><a href="{% url 'individual_post' post.id %}">{{post.caption}}</a></li>
+                        <li>{{post.created}}</li>
+                </ul>
+            {% endfor %}
+        {% endif %}
+        <button><a href="{% url 'add_post' %}">Add post</a></button>
+        {% endblock content %}
+</body>
+</html>

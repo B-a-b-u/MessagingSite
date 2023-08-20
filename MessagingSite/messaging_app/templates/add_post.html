@@ -1,0 +1,24 @@
+<form action="{% url 'add_post' %}" method="POST">
+    {% csrf_token %}
+    <br><br>
+
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username">
+    <br><br>
+
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email">
+    <br><br>
+
+    <label for="caption">Caption</label>
+    <input type="text" name="caption" id="caption">
+    <br><br>
+
+    <label for="content">Content</label>
+    <br>
+    <textarea name="content" id="content" placeholder="Enter your message here"></textarea>
+    <br><br>
+
+    <button type="submit">Post</button>
+    <button type="reset">Reset</button>
+</form>
